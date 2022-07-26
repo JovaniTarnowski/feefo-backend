@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jovani
+      changes:
+        - createTable:
+            tableName: TBJob
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: job_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: jovani
+      changes:
+        - createTable:
+            tableName: QUALITY_SCORE
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: normalized_job_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quality_score
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 3
+      author: jovani
+      changes:
+        - insert:
+            tableName: TBJob
+            columns:
+              - column:
+                  name: job_title
+                  value: Software engineer
+        - insert:
+            tableName: TBJob
+            columns:
+              - column:
+                  name: job_title
+                  value: Accountant
+        - insert:
+            tableName: TBJob
+            columns:
+              - column:
+                  name: job_title
+                  value: Architect
+        - insert:
+            tableName: TBJob
+            columns:
+              - column:
+                  name: job_title
+                  value: Quantity surveyor
